@@ -1,21 +1,39 @@
-QT       += core gui
+QT       += core gui charts
+CONFIG   += c++14
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
-
-CONFIG += c++14
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
+TARGET = ch02-sysinfo
+TEMPLATE = app
+
 SOURCES += \
+    Sysinfo.cpp \
     main.cpp \
     mainwindow.cpp \
-    sysinfo.cpp
+   # CpuWidget.cpp \
+   # MemoryWidget.cpp \
+   # SysInfoWidget.cpp
 
 HEADERS += \
+    Sysinfo.h \
     mainwindow.h \
-    sysinfo.h
+   # CpuWidget.h \
+   # MemoryWidget.cpp \
+   # SysInfoWidget.cpp
+
+windows {
+    SOURCES += SysInfoWindows.cpp
+    HEADERS += SysInfoWindows.h
+}
+
+linux {
+    SOURCES += SysInfoLinux.cpp
+    HEADERS += SysInfoLinux.h
+}
 
 FORMS += \
     mainwindow.ui
