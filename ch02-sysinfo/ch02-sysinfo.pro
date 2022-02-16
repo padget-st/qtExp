@@ -11,6 +11,8 @@ TARGET = ch02-sysinfo
 TEMPLATE = app
 
 SOURCES += \
+    CpuWidget.cpp \
+    SysInfoWidget.cpp \
     Sysinfo.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -19,6 +21,8 @@ SOURCES += \
    # SysInfoWidget.cpp
 
 HEADERS += \
+    CpuWidget.h \
+    SysInfoWidget.h \
     Sysinfo.h \
     mainwindow.h \
    # CpuWidget.h \
